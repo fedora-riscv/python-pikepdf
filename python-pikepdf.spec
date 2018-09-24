@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        0.3.2
+Version:        0.3.3
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -10,7 +10,7 @@ URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
 
 BuildRequires:  gcc-c++
-BuildRequires:  qpdf-devel
+BuildRequires:  qpdf-devel >= 8.2.1
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(hypothesis) >= 3.56.9
 BuildRequires:  python3dist(pillow) >= 5.0.0
@@ -22,6 +22,7 @@ BuildRequires:  python3dist(pytest-timeout) >= 1.3.0
 BuildRequires:  python3dist(pytest-xdist) >= 1.22.2
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
+BuildRequires:  python3dist(setuptools-scm-git-archive)
 
 %description
 pikepdf is a Python library allowing creation, manipulation and repair of PDFs.
@@ -86,16 +87,19 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %files -n python3-%{srcname}
-%license LICENSE.txt licenses/license.mpl2-no-exhibit-b.txt
+%license LICENSE.txt
 %doc README.rst
 %{python3_sitearch}/%{srcname}
 %{python3_sitearch}/%{srcname}-%{version}-py?.?.egg-info
 
 %files -n python-%{srcname}-doc
 %doc html
-%license LICENSE.txt licenses/license.mpl2-no-exhibit-b.txt
+%license LICENSE.txt
 
 
 %changelog
+* Mon Sep 24 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.3-1
+- Update to latest version
+
 * Tue Aug 21 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.2-1
 - Initial package.
