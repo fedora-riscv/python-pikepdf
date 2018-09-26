@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        0.3.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
@@ -35,6 +35,8 @@ Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{srcname}}
 
 %{?python_enable_dependency_generator}
+# Force a minimum version (same soname as 8.1.x):
+Requires:       qpdf-libs >= 8.2.1
 
 %description -n python3-%{srcname}
 pikepdf is a Python library allowing creation, manipulation and repair of PDFs.
@@ -98,6 +100,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Tue Sep 25 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.3-2
+- Force requires to new qpdf
+
 * Mon Sep 24 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.3-1
 - Update to latest version
 
