@@ -1,8 +1,8 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        0.3.3
-Release:        2%{?dist}
+Version:        0.3.5
+Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
@@ -62,9 +62,6 @@ Documentation for pikepdf
 # Remove bundled egg-info
 rm -rf src/%{srcname}.egg-info
 
-# Remove vendored code
-rm -rf src/vendor
-
 # We don't build docs against the installed version, so force the version.
 sed -i -e "s/release = .\+/release = '%{version}'/g" docs/conf.py
 
@@ -90,7 +87,7 @@ rm -rf html/.{doctrees,buildinfo}
 
 %files -n python3-%{srcname}
 %license LICENSE.txt
-%doc README.rst
+%doc README.md
 %{python3_sitearch}/%{srcname}
 %{python3_sitearch}/%{srcname}-%{version}-py?.?.egg-info
 
@@ -100,6 +97,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Sat Oct 13 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.5-1
+- Update to latest version
+
 * Tue Sep 25 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.3-2
 - Force requires to new qpdf
 
