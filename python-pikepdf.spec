@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        0.3.5
+Version:        0.3.7
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -97,6 +97,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Wed Dec 12 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.7-1
+- Update to latest version
+
 * Sat Oct 13 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 0.3.5-1
 - Update to latest version
 
