@@ -13,7 +13,6 @@ Patch0001:      0001-Reduce-test-requirements.patch
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.0
 BuildRequires:  python3-devel
-BuildRequires:  python3dist(defusedxml) >= 0.5.0
 BuildRequires:  python3dist(lxml) >= 4.0
 BuildRequires:  (python3dist(pybind11) >= 2.2.4 with python3dist(pybind11) < 3)
 BuildRequires:  python3dist(setuptools) >= 30.3.0
