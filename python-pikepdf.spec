@@ -13,20 +13,20 @@ Patch0001:      0001-Reduce-test-requirements.patch
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.0
 BuildRequires:  python3-devel
-BuildRequires:  python3dist(lxml) >= 4.0
+BuildRequires:  python3dist(lxml) >= 4
 BuildRequires:  (python3dist(pybind11) >= 2.2.4 with python3dist(pybind11) < 3)
-BuildRequires:  python3dist(setuptools) >= 30.3.0
+BuildRequires:  python3dist(setuptools) >= 30.3
 BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:  python3dist(setuptools-scm-git-archive)
 # Tests:
 BuildRequires:  poppler-utils
-BuildRequires:  python3dist(attrs) >= 17.4.0
+BuildRequires:  python3dist(attrs) >= 17.4
 BuildRequires:  python3dist(hypothesis) >= 3.56.9
-BuildRequires:  python3dist(pillow) >= 5.0.0
-BuildRequires:  python3dist(pytest) >= 3.6.0
+BuildRequires:  python3dist(pillow) >= 5
+BuildRequires:  python3dist(pytest) >= 3.6
 BuildRequires:  python3dist(pytest-helpers-namespace) >= 2017.11.11
 BuildRequires:  python3dist(pytest-runner)
-BuildRequires:  python3dist(pytest-timeout) >= 1.3.0
+BuildRequires:  python3dist(pytest-timeout) >= 1.3
 BuildRequires:  python3dist(pytest-xdist) >= 1.22.2
 BuildRequires:  python3dist(python-xmp-toolkit) >= 2.0.1
 
