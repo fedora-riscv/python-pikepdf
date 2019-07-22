@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.3.0
+Version:        1.3.1
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -14,7 +14,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.0
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
-BuildRequires:  (python3dist(pybind11) >= 2.2.4 with python3dist(pybind11) < 3)
+BuildRequires:  (python3dist(pybind11) >= 2.3 with python3dist(pybind11) < 3)
 BuildRequires:  python3dist(setuptools) >= 30.3
 BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:  python3dist(setuptools-scm-git-archive)
