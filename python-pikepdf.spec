@@ -1,13 +1,13 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.3.1
+Version:        1.5.0
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
-Source0:        %pypi_source
+Source0:        %pypi_source %srcname %version.post0
 Patch0001:      0001-Reduce-test-requirements.patch
 
 BuildRequires:  gcc-c++
@@ -15,25 +15,24 @@ BuildRequires:  qpdf-devel >= 8.4.0
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
 BuildRequires:  (python3dist(pybind11) >= 2.3 with python3dist(pybind11) < 3)
-BuildRequires:  python3dist(setuptools) >= 30.3
+BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:  python3dist(setuptools-scm-git-archive)
 # Tests:
 BuildRequires:  poppler-utils
 BuildRequires:  python3dist(attrs) >= 17.4
-BuildRequires:  python3dist(hypothesis) >= 3.56.9
+BuildRequires:  (python3dist(hypothesis) >= 3.66.11 with python3dist(hypothesis) < 5)
 BuildRequires:  python3dist(pillow) >= 5
-BuildRequires:  python3dist(pytest) >= 3.6
-BuildRequires:  python3dist(pytest-helpers-namespace) >= 2017.11.11
+BuildRequires:  (python3dist(pytest) >= 3.9.3 with python3dist(pytest) < 5)
+BuildRequires:  python3dist(pytest-helpers-namespace) >= 2019.1.8
 BuildRequires:  python3dist(pytest-runner)
-BuildRequires:  python3dist(pytest-timeout) >= 1.3
-BuildRequires:  python3dist(pytest-xdist) >= 1.22.2
+BuildRequires:  python3dist(pytest-timeout) >= 1.3.3
+BuildRequires:  (python3dist(pytest-xdist) >= 1.27 with python3dist(pytest-xdist) < 2)
 BuildRequires:  python3dist(python-xmp-toolkit) >= 2.0.1
 
 %description
-pikepdf is a Python library allowing creation, manipulation and repair of PDFs.
-It provides a Pythonic wrapper around the C++ PDF content transformation
-library, QPDF.
+pikepdf is a Python library for reading and writing PDF files. pikepdf is
+based on QPDF, a powerful PDF manipulation and repair library.
 
 
 %package -n     python3-%{srcname}
@@ -45,9 +44,8 @@ Summary:        %{summary}
 Requires:       qpdf-libs >= 8.4.0
 
 %description -n python3-%{srcname}
-pikepdf is a Python library allowing creation, manipulation and repair of PDFs.
-It provides a Pythonic wrapper around the C++ PDF content transformation
-library, QPDF.
+pikepdf is a Python library for reading and writing PDF files. pikepdf is
+based on QPDF, a powerful PDF manipulation and repair library.
 
 
 %package -n python-%{srcname}-doc
@@ -63,7 +61,7 @@ Documentation for pikepdf
 
 
 %prep
-%autosetup -n %{srcname}-%{version} -p1
+%autosetup -n %{srcname}-%{version}.post0 -p1
 
 # Remove bundled egg-info
 rm -rf src/%{srcname}.egg-info
@@ -95,7 +93,7 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE.txt
 %doc README.md
 %{python3_sitearch}/%{srcname}
-%{python3_sitearch}/%{srcname}-%{version}-py?.?.egg-info
+%{python3_sitearch}/%{srcname}-%{version}.post0-py?.?.egg-info
 
 %files -n python-%{srcname}-doc
 %doc html
@@ -103,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Mon Jul 22 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.5.0-1
+- Update to latest version
+
 * Tue May 14 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.3.0-1
 - Update to latest version
 
