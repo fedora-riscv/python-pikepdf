@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        1.5.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.5.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Mon Jul 22 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.5.0-1
 - Update to latest version
 
