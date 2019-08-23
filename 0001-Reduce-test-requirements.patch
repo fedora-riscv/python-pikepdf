@@ -1,20 +1,21 @@
-From 3fa61086118a48a1aef21696ef5b2e0d53269b28 Mon Sep 17 00:00:00 2001
+From 11dcd3f7955a13f4c953a469ef2d20b3038cb77f Mon Sep 17 00:00:00 2001
 From: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 Date: Tue, 16 Apr 2019 02:09:03 -0400
 Subject: [PATCH] Reduce test requirements.
 
 Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 ---
- requirements/test.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ requirements/test.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/requirements/test.txt b/requirements/test.txt
-index 1844781..ddf53fc 100644
+index 6b97bf8..f0e8e28 100644
 --- a/requirements/test.txt
 +++ b/requirements/test.txt
 @@ -1,8 +1,8 @@
- attrs >= 17.4.0
--hypothesis >= 4.16, < 5
+-attrs >= 19.1.0
+-hypothesis >= 4.24, < 5
++attrs >= 18.2.0
 +hypothesis >= 3.66.11, < 5
  Pillow >= 5.0.0
 -pytest >= 4.4.0, < 5

@@ -1,17 +1,17 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.5.0
-Release:        3%{?dist}
+Version:        1.6.1
+Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
-Source0:        %pypi_source %srcname %version.post0
+Source0:        %pypi_source
 Patch0001:      0001-Reduce-test-requirements.patch
 
 BuildRequires:  gcc-c++
-BuildRequires:  qpdf-devel >= 8.4.0
+BuildRequires:  qpdf-devel >= 8.4.2
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
 BuildRequires:  (python3dist(pybind11) >= 2.3 with python3dist(pybind11) < 3)
@@ -20,7 +20,7 @@ BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:  python3dist(setuptools-scm-git-archive)
 # Tests:
 BuildRequires:  poppler-utils
-BuildRequires:  python3dist(attrs) >= 17.4
+BuildRequires:  python3dist(attrs) >= 18.2
 BuildRequires:  (python3dist(hypothesis) >= 3.66.11 with python3dist(hypothesis) < 5)
 BuildRequires:  python3dist(pillow) >= 5
 BuildRequires:  (python3dist(pytest) >= 3.9.3 with python3dist(pytest) < 5)
@@ -41,7 +41,7 @@ Summary:        %{summary}
 
 %{?python_enable_dependency_generator}
 # Force a minimum version (same soname as 8.1.x):
-Requires:       qpdf-libs >= 8.4.0
+Requires:       qpdf-libs >= 8.4.2
 
 %description -n python3-%{srcname}
 pikepdf is a Python library for reading and writing PDF files. pikepdf is
@@ -61,7 +61,7 @@ Documentation for pikepdf
 
 
 %prep
-%autosetup -n %{srcname}-%{version}.post0 -p1
+%autosetup -n %{srcname}-%{version} -p1
 
 # Remove bundled egg-info
 rm -rf src/%{srcname}.egg-info
@@ -93,7 +93,7 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE.txt
 %doc README.md
 %{python3_sitearch}/%{srcname}
-%{python3_sitearch}/%{srcname}-%{version}.post0-py?.?.egg-info
+%{python3_sitearch}/%{srcname}-%{version}-py?.?.egg-info
 
 %files -n python-%{srcname}-doc
 %doc html
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Fri Aug 23 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.6.1-1
+- Update to latest version
+
 * Mon Aug 19 2019 Miro Hrončok <mhroncok@redhat.com> - 1.5.0-3
 - Rebuilt for Python 3.8
 
