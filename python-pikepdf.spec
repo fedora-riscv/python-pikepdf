@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.6.2
+Version:        1.6.3
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -9,8 +9,6 @@ License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
 Patch0001:      0001-Reduce-test-requirements.patch
-# Fix some doc build problems.
-Patch0002:      %{url}/commit/30dd6fdc86dbece76a0d3769f6dbc0aaee0032cd.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
@@ -103,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Wed Sep 04 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.6.3-1
+- Update to latest version
+
 * Fri Aug 30 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.6.2-1
 - Update to latest version
 
