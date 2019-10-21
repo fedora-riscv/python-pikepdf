@@ -1,12 +1,13 @@
-From 53dd8062ee8a307b627a1691d0e3a30e1a3be6ec Mon Sep 17 00:00:00 2001
+From 019ecdcfce76027fe8cc0bdc25dddc57645d5f44 Mon Sep 17 00:00:00 2001
 From: Elliott Sales de Andrade <quantum.analyst@gmail.com>
-Date: Tue, 16 Apr 2019 02:09:03 -0400
-Subject: [PATCH] Reduce test requirements.
+Date: Mon, 21 Oct 2019 15:25:19 -0400
+Subject: [PATCH] Reduce some requirements.
 
 Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 ---
  requirements/test.txt | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ setup.py              | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/requirements/test.txt b/requirements/test.txt
 index 6b97bf8..f0e8e28 100644
@@ -25,6 +26,19 @@ index 6b97bf8..f0e8e28 100644
  pytest-helpers-namespace >= 2019.1.8
  pytest-timeout >= 1.3.3
  python-xmp-toolkit >= 2.0.1 ; sys_platform != "nt"
+diff --git a/setup.py b/setup.py
+index 6fd094a..a2a9f35 100644
+--- a/setup.py
++++ b/setup.py
+@@ -147,7 +147,7 @@ if __name__ == '__main__':  # for mp_compile
+         setup_requires=[
+             'setuptools_scm',
+             'setuptools_scm_git_archive',
+-            'pybind11 >= 2.4.3, < 3',
++            'pybind11 >= 2.3.0, < 3',
+         ],
+         use_scm_version=True,
+         tests_require=tests_require,
 -- 
 2.21.0
 
