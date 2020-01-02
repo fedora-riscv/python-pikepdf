@@ -104,6 +104,9 @@ rm -rf html/.{doctrees,buildinfo}
 * Thu Jan 02 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.8.1-1
 - Update to latest version
 
+* Tue Nov 19 2019 Zdenek Dohnal <zdohnal@redhat.com> - 1.7.0-2
+- rebuilt for qpdf-9.1.0
+
 * Mon Nov 11 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.7.0-1
 - Update to latest version
 
