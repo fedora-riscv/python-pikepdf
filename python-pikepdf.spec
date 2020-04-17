@@ -1,8 +1,8 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.11.0
-Release:        2%{?dist}
+Version:        1.11.1
+Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Fri Apr 17 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.11.1-1
+- Update to latest version
+
 * Tue Apr 14 2020 Zdenek Dohnal <zdohnal@redhat.com> - 1.11.0-2
 - rebuilt for qpdf-10.0.1
 
