@@ -1,4 +1,4 @@
-From e8892ff9515e2c81701f297c8a92a1d55e6c437c Mon Sep 17 00:00:00 2001
+From 77ccf7df40509fea7c577c0da3a3fd89ae54adb4 Mon Sep 17 00:00:00 2001
 From: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 Date: Mon, 21 Oct 2019 15:25:19 -0400
 Subject: [PATCH] Reduce some requirements.
@@ -6,11 +6,10 @@ Subject: [PATCH] Reduce some requirements.
 Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 ---
  requirements/test.txt | 8 ++++----
- setup.py              | 2 +-
- 2 files changed, 5 insertions(+), 5 deletions(-)
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/requirements/test.txt b/requirements/test.txt
-index c5a75e4..ecb3e4d 100644
+index 3a05edf..ecb3e4d 100644
 --- a/requirements/test.txt
 +++ b/requirements/test.txt
 @@ -1,8 +1,8 @@
@@ -19,26 +18,13 @@ index c5a75e4..ecb3e4d 100644
 +attrs >= 18.2.0
 +hypothesis >= 3.66.11, < 6
  Pillow >= 5.0.0
--pytest >= 4.4.0, < 6
+-pytest >= 4.4.0, < 5.3.5
 -pytest-xdist >= 1.28, < 2
 +pytest >= 3.10.1, < 6
 +pytest-xdist >= 1.27.0, < 2
  pytest-helpers-namespace >= 2019.1.8
  pytest-timeout >= 1.3.3
  python-xmp-toolkit >= 2.0.1 ; sys_platform != "nt"
-diff --git a/setup.py b/setup.py
-index 68c1e5b..3600dcf 100644
---- a/setup.py
-+++ b/setup.py
-@@ -155,7 +155,7 @@ if __name__ == '__main__':  # for mp_compile
-         setup_requires=[
-             'setuptools_scm',
-             'setuptools_scm_git_archive',
--            'pybind11 >= 2.4.3, < 3',
-+            'pybind11 >= 2.3.0, < 3',
-         ],
-         use_scm_version=True,
-         tests_require=tests_require,
 -- 
 2.21.1
 
