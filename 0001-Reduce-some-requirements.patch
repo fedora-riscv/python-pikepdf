@@ -1,30 +1,28 @@
-From 77ccf7df40509fea7c577c0da3a3fd89ae54adb4 Mon Sep 17 00:00:00 2001
+From d8fde20faf6b1f081b3fba06d616c75d8a5f6185 Mon Sep 17 00:00:00 2001
 From: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 Date: Mon, 21 Oct 2019 15:25:19 -0400
 Subject: [PATCH] Reduce some requirements.
 
 Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 ---
- requirements/test.txt | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ requirements/test.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/requirements/test.txt b/requirements/test.txt
-index 3a05edf..ecb3e4d 100644
+index e78ce18..7e9af4a 100644
 --- a/requirements/test.txt
 +++ b/requirements/test.txt
 @@ -1,8 +1,8 @@
--attrs >= 19.1.0
+ attrs >= 19.1.0
 -hypothesis >= 4.24, < 6
-+attrs >= 18.2.0
-+hypothesis >= 3.66.11, < 6
++hypothesis >= 4.23.8, < 6
  Pillow >= 5.0.0
+ psutil >= 5
 -pytest >= 4.4.0, < 5.3.5
--pytest-xdist >= 1.28, < 2
-+pytest >= 3.10.1, < 6
-+pytest-xdist >= 1.27.0, < 2
++pytest >= 4.4.0, < 6
+ pytest-xdist >= 1.28, < 2
  pytest-helpers-namespace >= 2019.1.8
  pytest-timeout >= 1.3.3
- python-xmp-toolkit >= 2.0.1 ; sys_platform != "nt"
 -- 
-2.21.1
+2.25.4
 

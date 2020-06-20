@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.14.0
+Version:        1.15.1
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -14,20 +14,20 @@ BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
-BuildRequires:  (python3dist(pybind11) >= 2.3 with python3dist(pybind11) < 3)
+BuildRequires:  (python3dist(pybind11) >= 2.4.3 with python3dist(pybind11) < 3)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:  python3dist(setuptools-scm-git-archive)
 # Tests:
 BuildRequires:  poppler-utils
-BuildRequires:  python3dist(attrs) >= 18.2
-BuildRequires:  (python3dist(hypothesis) >= 3.66.11 with python3dist(hypothesis) < 6)
+BuildRequires:  python3dist(attrs) >= 19.1
+BuildRequires:  (python3dist(hypothesis) >= 4.23.8 with python3dist(hypothesis) < 6)
 BuildRequires:  python3dist(pillow) >= 5
-BuildRequires:  (python3dist(pytest) >= 3.10.1 with python3dist(pytest) < 6)
+BuildRequires:  python3dist(psutil) >= 5
+BuildRequires:  (python3dist(pytest) >= 4.4.0 with python3dist(pytest) < 6)
 BuildRequires:  python3dist(pytest-helpers-namespace) >= 2019.1.8
-BuildRequires:  python3dist(pytest-runner)
 BuildRequires:  python3dist(pytest-timeout) >= 1.3.3
-BuildRequires:  (python3dist(pytest-xdist) >= 1.27 with python3dist(pytest-xdist) < 2)
+BuildRequires:  (python3dist(pytest-xdist) >= 1.28 with python3dist(pytest-xdist) < 2)
 BuildRequires:  python3dist(python-xmp-toolkit) >= 2.0.1
 
 %description
@@ -86,7 +86,7 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %check
-%{__python3} setup.py test --addopts -ra
+%{pytest} -ra
 
 
 %files -n python3-%{srcname}
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Sat Jun 20 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.15.1-1
+- Update to latest version
+
 * Sun May 31 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.14.0-1
 - Update to latest version
 
