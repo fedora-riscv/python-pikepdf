@@ -14,6 +14,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
+BuildRequires:  python3dist(pillow) >= 6
 BuildRequires:  (python3dist(pybind11) >= 2.4.3 with python3dist(pybind11) < 3)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
@@ -22,7 +23,6 @@ BuildRequires:  python3dist(setuptools-scm-git-archive)
 BuildRequires:  poppler-utils
 BuildRequires:  python3dist(attrs) >= 19.1
 BuildRequires:  (python3dist(hypothesis) >= 4.23.8 with python3dist(hypothesis) < 6)
-BuildRequires:  python3dist(pillow) >= 5
 BuildRequires:  python3dist(psutil) >= 5
 BuildRequires:  (python3dist(pytest) >= 4.4.0 with python3dist(pytest) < 6)
 BuildRequires:  python3dist(pytest-helpers-namespace) >= 2019.1.8
