@@ -1,14 +1,14 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.18.0
+Version:        1.19.0
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
-Patch0001:      0001-Reduce-some-requirements.patch
+Patch0001:      0001-Relax-some-test-requirements.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
@@ -24,10 +24,10 @@ BuildRequires:  poppler-utils
 BuildRequires:  python3dist(attrs) >= 19.1
 BuildRequires:  (python3dist(hypothesis) >= 4.23.8 with python3dist(hypothesis) < 6)
 BuildRequires:  python3dist(psutil) >= 5
-BuildRequires:  (python3dist(pytest) >= 4.4.0 with python3dist(pytest) < 6)
+BuildRequires:  (python3dist(pytest) >= 4.4.0 with python3dist(pytest) < 7)
 BuildRequires:  python3dist(pytest-helpers-namespace) >= 2019.1.8
 BuildRequires:  python3dist(pytest-timeout) >= 1.3.3
-BuildRequires:  (python3dist(pytest-xdist) >= 1.28 with python3dist(pytest-xdist) < 2)
+BuildRequires:  (python3dist(pytest-xdist) >= 1.28 with python3dist(pytest-xdist) < 3)
 BuildRequires:  python3dist(python-xmp-toolkit) >= 2.0.1
 
 %description
@@ -101,6 +101,10 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Wed Aug 19 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.19.0-1
+- Update to latest version (#1869556)
+- Allow latest pytest and pytest-xdist
+
 * Tue Aug 11 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.18.0-1
 - Update to latest version (rhbz#1867536)
 
