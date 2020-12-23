@@ -11,7 +11,7 @@ Source0:        %pypi_source
 Patch0001:      0001-Relax-some-requirements.patch
 
 BuildRequires:  gcc-c++
-BuildRequires:  qpdf-devel >= 8.4.2
+BuildRequires:  qpdf-devel >= 10.0.3
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
 BuildRequires:  (python3dist(pillow) >= 7 with python3dist(pillow) < 9)
