@@ -1,32 +1,32 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        1.19.4
+Version:        2.2.1
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
-Patch0001:      0001-Relax-some-test-requirements.patch
+Patch0001:      0001-Relax-some-requirements.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(lxml) >= 4
-BuildRequires:  python3dist(pillow) >= 6
-BuildRequires:  (python3dist(pybind11) >= 2.4.3 with python3dist(pybind11) < 3)
+BuildRequires:  (python3dist(pillow) >= 7 with python3dist(pillow) < 9)
+BuildRequires:  (python3dist(pybind11) >= 2.6 with python3dist(pybind11) < 3)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
+BuildRequires:  python3dist(setuptools-scm[toml]) >= 4.1
 BuildRequires:  python3dist(setuptools-scm-git-archive)
 # Tests:
 BuildRequires:  poppler-utils
-BuildRequires:  python3dist(attrs) >= 19.1
-BuildRequires:  (python3dist(hypothesis) >= 4.23.8 with python3dist(hypothesis) < 6)
+BuildRequires:  python3dist(attrs) >= 20.2
+BuildRequires:  (python3dist(hypothesis) >= 5 with python3dist(hypothesis) < 6)
 BuildRequires:  python3dist(psutil) >= 5
-BuildRequires:  (python3dist(pytest) >= 4.4 with python3dist(pytest) < 7)
-BuildRequires:  python3dist(pytest-helpers-namespace) >= 2019.1.8
-BuildRequires:  python3dist(pytest-timeout) >= 1.3.3
+BuildRequires:  (python3dist(pytest) >= 6 with python3dist(pytest) < 7)
+BuildRequires:  python3dist(pytest-timeout) >= 1.4.2
 BuildRequires:  (python3dist(pytest-xdist) >= 1.28 with python3dist(pytest-xdist) < 3)
 BuildRequires:  python3dist(python-xmp-toolkit) >= 2.0.1
 
@@ -92,8 +92,8 @@ rm -rf html/.{doctrees,buildinfo}
 %files -n python3-%{srcname}
 %license LICENSE.txt
 %doc README.md
-%{python3_sitearch}/%{srcname}
-%{python3_sitearch}/%{srcname}-%{version}-py%{python3_version}.egg-info
+%{python3_sitearch}/%{srcname}/
+%{python3_sitearch}/%{srcname}-%{version}-py%{python3_version}.egg-info/
 
 %files -n python-%{srcname}-doc
 %doc html
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Wed Dec 23 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 2.2.1-1
+- Update to latest version (#1891776)
+
 * Wed Dec 23 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.19.4-1
 - Update to latest version
 
