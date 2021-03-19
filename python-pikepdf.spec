@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        2.8.0
+Version:        2.9.0
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -23,7 +23,7 @@ BuildRequires:  python3dist(setuptools-scm-git-archive)
 # Tests:
 BuildRequires:  poppler-utils
 BuildRequires:  python3dist(attrs) >= 20.2
-BuildRequires:  (python3dist(hypothesis) >= 5 with python3dist(hypothesis) < 6)
+BuildRequires:  (python3dist(hypothesis) >= 5 with python3dist(hypothesis) < 7)
 BuildRequires:  python3dist(psutil) >= 5
 BuildRequires:  (python3dist(pytest) >= 6 with python3dist(pytest) < 7)
 BuildRequires:  python3dist(pytest-timeout) >= 1.4.2
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Fri Mar 19 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 2.9.0-1
+- Update to latest version (#1938957)
+
 * Sun Feb 28 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 2.8.0-1
 - Update to latest version (#1933531)
 
