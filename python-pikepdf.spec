@@ -2,13 +2,17 @@
 
 Name:           python-%{srcname}
 Version:        1.19.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
 Patch0001:      0001-Relax-some-test-requirements.patch
+# Backport patches to work with qpdf 10.1
+Patch0002:      0002-Fix-externalize_inline_images-for-qpdf-10.1.0.patch
+Patch0003:      0003-libqpdf-10.1.0-raises-different-exception.patch
+Patch0004:      0004-Fix-test_tokenfilter_is_abstract.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
@@ -101,6 +105,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Thu Apr 01 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.19.4-2
+- Backport fix for qpdf 10.1.0
+
 * Wed Dec 23 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.19.4-1
 - Update to latest version
 

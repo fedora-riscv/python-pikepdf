@@ -1,0 +1,29 @@
+From e0de53084fe005fafad423a66b261cc45cfaaeb0 Mon Sep 17 00:00:00 2001
+From: "James R. Barlow" <james@purplerock.ca>
+Date: Mon, 4 Jan 2021 20:21:51 -0800
+Subject: [PATCH 2/4] Fix externalize_inline_images for qpdf 10.1.0
+
+Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
+---
+ src/qpdf/page.cpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/qpdf/page.cpp b/src/qpdf/page.cpp
+index 72748a9..3f6e26e 100644
+--- a/src/qpdf/page.cpp
++++ b/src/qpdf/page.cpp
+@@ -79,7 +79,10 @@ void init_page(py::module& m)
+         .def("_get_mediabox", &QPDFPageObjectHelper::getMediaBox)
+         .def("_get_cropbox", &QPDFPageObjectHelper::getCropBox)
+         .def("_get_trimbox", &QPDFPageObjectHelper::getTrimBox)
+-        .def("externalize_inline_images", &QPDFPageObjectHelper::externalizeInlineImages,
++        .def("externalize_inline_images",
++            [](QPDFPageObjectHelper &poh, size_t min_size = 0) {
++                return poh.externalizeInlineImages(min_size);
++            },
+             py::arg("min_size") = 0,
+             R"~~~(
+                 Convert inlines image to normal (external) images.
+-- 
+2.29.2
+
