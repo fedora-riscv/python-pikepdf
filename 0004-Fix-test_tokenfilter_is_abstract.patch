@@ -1,7 +1,7 @@
 From 4521a84f5892a38e380ed53f9b4cbcfd7647db45 Mon Sep 17 00:00:00 2001
 From: "James R. Barlow" <james@purplerock.ca>
 Date: Wed, 6 Jan 2021 03:39:50 -0800
-Subject: [PATCH 4/4] Fix test_tokenfilter_is_abstract
+Subject: [PATCH 4/5] Fix test_tokenfilter_is_abstract
 
 Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 ---

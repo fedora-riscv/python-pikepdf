@@ -1,7 +1,7 @@
 From e0de53084fe005fafad423a66b261cc45cfaaeb0 Mon Sep 17 00:00:00 2001
 From: "James R. Barlow" <james@purplerock.ca>
 Date: Mon, 4 Jan 2021 20:21:51 -0800
-Subject: [PATCH 2/4] Fix externalize_inline_images for qpdf 10.1.0
+Subject: [PATCH 2/5] Fix externalize_inline_images for qpdf 10.1.0
 
 Signed-off-by: Elliott Sales de Andrade <quantum.analyst@gmail.com>
 ---

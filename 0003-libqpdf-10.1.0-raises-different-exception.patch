@@ -1,7 +1,7 @@
 From d9554019340177a2fb0d033fc6ffcf45f025cb2f Mon Sep 17 00:00:00 2001
 From: "James R. Barlow" <james@purplerock.ca>
 Date: Wed, 6 Jan 2021 00:22:16 -0800
-Subject: [PATCH 3/4] libqpdf 10.1.0 raises different exception
+Subject: [PATCH 3/5] libqpdf 10.1.0 raises different exception
 
 The different errors are acceptable to us; actually they are more
 correct than the original behavior.

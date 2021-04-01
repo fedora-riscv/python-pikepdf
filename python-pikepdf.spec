@@ -13,6 +13,8 @@ Patch0001:      0001-Relax-some-test-requirements.patch
 Patch0002:      0002-Fix-externalize_inline_images-for-qpdf-10.1.0.patch
 Patch0003:      0003-libqpdf-10.1.0-raises-different-exception.patch
 Patch0004:      0004-Fix-test_tokenfilter_is_abstract.patch
+# Backport XXE security fix.
+Patch0005:      0005-Fix-XXE-vulnerability-in-XMP-metadata-parsing.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 8.4.2
@@ -107,6 +109,7 @@ rm -rf html/.{doctrees,buildinfo}
 %changelog
 * Thu Apr 01 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.19.4-2
 - Backport fix for qpdf 10.1.0
+- Backport fix for XXE vulnerability (#1945365)
 
 * Wed Dec 23 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.19.4-1
 - Update to latest version
