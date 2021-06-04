@@ -2,7 +2,7 @@
 
 Name:           python-%{srcname}
 Version:        2.12.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
@@ -101,6 +101,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Fri Jun 04 2021 Python Maint <python-maint@redhat.com> - 2.12.1-2
+- Rebuilt for Python 3.10
+
 * Sat May 22 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 2.12.1-1
 - Update to latest version (#1963060)
 
