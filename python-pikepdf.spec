@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        2.12.2
+Version:        2.13.0
 Release:        1%{?dist}
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -26,8 +26,10 @@ BuildRequires:  python3dist(attrs) >= 20.2
 BuildRequires:  (python3dist(hypothesis) >= 5 with python3dist(hypothesis) < 7)
 BuildRequires:  python3dist(psutil) >= 5
 BuildRequires:  (python3dist(pytest) >= 6 with python3dist(pytest) < 7)
+BuildRequires:  python3dist(pytest-forked)
 BuildRequires:  python3dist(pytest-timeout) >= 1.4.2
 BuildRequires:  (python3dist(pytest-xdist) >= 1.28 with python3dist(pytest-xdist) < 3)
+BuildRequires:  python3dist(python-dateutil) >= 2.8
 BuildRequires:  python3dist(python-xmp-toolkit) >= 2.0.1
 
 %description
@@ -37,9 +39,7 @@ based on QPDF, a powerful PDF manipulation and repair library.
 
 %package -n     python3-%{srcname}
 Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{srcname}}
 
-%{?python_enable_dependency_generator}
 # Force a minimum version (same soname as 8.1.x):
 Requires:       qpdf-libs >= 8.4.2
 
@@ -51,7 +51,8 @@ based on QPDF, a powerful PDF manipulation and repair library.
 %package -n python-%{srcname}-doc
 Summary:        pikepdf documentation
 
-BuildRequires:  python3dist(sphinx) >= 1.4
+BuildRequires:  python3dist(sphinx) >= 3
+BuildRequires:  python3dist(sphinx-issues)
 BuildRequires:  python3dist(sphinx-rtd-theme)
 BuildRequires:  python3dist(matplotlib)
 BuildRequires:  python3-ipython-sphinx
@@ -101,6 +102,9 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %changelog
+* Mon Jun 28 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 2.13.0-1
+- Update to latest version (#1974617)
+
 * Sat Jun 19 2021 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 2.12.2-1
 - Update to latest version (#1968156)
 
