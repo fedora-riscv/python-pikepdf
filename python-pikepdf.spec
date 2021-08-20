@@ -1,17 +1,17 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        2.16.1
-Release:        %autorelease
+Version:        3.0.0
+Release:        %autorelease -p -e b1
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
-Source0:        %pypi_source
+Source0:        %pypi_source %{srcname} %{version}b1
 Patch0001:      0001-Relax-some-requirements.patch
 
 BuildRequires:  gcc-c++
-BuildRequires:  qpdf-devel >= 10.0.3
+BuildRequires:  qpdf-devel >= 10.3.2
 BuildRequires:  python3-devel
 # Tests:
 BuildRequires:  poppler-utils
@@ -40,7 +40,7 @@ Documentation for pikepdf
 
 
 %prep
-%autosetup -n %{srcname}-%{version} -p1
+%autosetup -n %{srcname}-%{version}b1 -p1
 
 # Remove bundled egg-info
 rm -rf src/%{srcname}.egg-info
