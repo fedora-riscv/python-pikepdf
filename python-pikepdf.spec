@@ -2,13 +2,12 @@
 
 Name:           python-%{srcname}
 Version:        3.0.0
-Release:        %autorelease -p -e b1
+Release:        %autorelease -p -e b2
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
-Source0:        %pypi_source %{srcname} %{version}b1
-Patch0001:      0001-Relax-some-requirements.patch
+Source0:        %pypi_source %{srcname} %{version}b2
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 10.3.2
@@ -40,10 +39,10 @@ Documentation for pikepdf
 
 
 %prep
-%autosetup -n %{srcname}-%{version}b1 -p1
+%autosetup -n %{srcname}-%{version}b2 -p1
 
-# Remove bundled egg-info
-rm -rf src/%{srcname}.egg-info
+# Drop coverage requirements
+sed -i -e '/coverage/d' -e '/pytest-cov/d' setup.cfg
 
 # We don't build docs against the installed version, so force the version.
 sed -i -e "s/release = .\+/release = '%{version}'/g" docs/conf.py
