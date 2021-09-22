@@ -1,13 +1,13 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        3.0.0
-Release:        %autorelease -p -e b3
+Version:        3.1.0
+Release:        %autorelease
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
-Source0:        %pypi_source %{srcname} %{version}b3
+Source0:        %pypi_source
 
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 10.3.2
@@ -39,7 +39,7 @@ Documentation for pikepdf
 
 
 %prep
-%autosetup -n %{srcname}-%{version}b3 -p1
+%autosetup -n %{srcname}-%{version} -p1
 
 # Drop coverage requirements
 sed -i -e '/coverage/d' -e '/pytest-cov/d' setup.cfg
