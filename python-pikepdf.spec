@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        3.1.1
+Version:        4.0.0
 Release:        %autorelease
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -57,7 +57,7 @@ sed -i -e "s/release = .\+/release = '%{version}'/g" docs/conf.py
 
 # generate html docs
 pushd docs
-PYTHONPATH=$(ls -d %{_pyproject_builddir}/pip-req-build-*/build/lib.%{python3_platform}-%{python3_version}) sphinx-build-3 . ../html
+PYTHONPATH="${PWD}/../build/lib.%{python3_platform}-%{python3_version}" sphinx-build-3 . ../html
 popd
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
