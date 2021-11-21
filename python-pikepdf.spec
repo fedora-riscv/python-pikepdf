@@ -53,6 +53,9 @@ sed -i -e "s/release = .\+/release = '%{version}'/g" docs/conf.py
 
 
 %build
+%if 0%{fedora} && 0%{fedora} < 36
+export PIP_USE_FEATURE="in-tree-build"
+%endif
 %pyproject_wheel
 
 # generate html docs
