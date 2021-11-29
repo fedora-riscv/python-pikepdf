@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        4.0.1
+Version:        4.0.2
 Release:        %autorelease
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -40,6 +40,9 @@ Documentation for pikepdf
 
 %prep
 %autosetup -n %{srcname}-%{version} -p1
+
+# Allow new pybind11
+sed -i -e '/pybind11/s/, <= 2.8.0//' pyproject.toml
 
 # Drop coverage requirements
 sed -i -e '/coverage/d' -e '/pytest-cov/d' setup.cfg
