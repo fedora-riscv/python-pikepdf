@@ -1,7 +1,7 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        4.1.0
+Version:        4.2.0
 Release:        %autorelease
 Summary:        Read and write PDFs with Python, powered by qpdf
 
@@ -56,14 +56,12 @@ sed -i -e "s/release = .\+/release = '%{version}'/g" docs/conf.py
 
 
 %build
-%if 0%{fedora} && 0%{fedora} < 36
-export PIP_USE_FEATURE="in-tree-build"
-%endif
 %pyproject_wheel
 
 # generate html docs
+export PYTHONPATH="%{pyproject_build_lib}"
 pushd docs
-PYTHONPATH="${PWD}/../build/lib.%{python3_platform}-%{python3_version}" sphinx-build-3 . ../html
+sphinx-build-3 . ../html
 popd
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
