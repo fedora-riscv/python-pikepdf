@@ -1,14 +1,13 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        4.2.0
+Version:        4.4.1
 Release:        %autorelease
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
-
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 10.3.2
 BuildRequires:  python3-devel
