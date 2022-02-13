@@ -1,0 +1,23 @@
+From e88eb19afd67c3696535205bf417fd99562ac0c8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20G=C3=B3rny?= <mgorny@gentoo.org>
+Date: Sun, 13 Feb 2022 10:18:10 +0100
+Subject: [PATCH] docs: Fix typo in TOML loading
+
+Reported by @QuLogic, thanks!
+---
+ docs/conf.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index 88bcda05..602e2038 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -107,7 +107,7 @@ def pip(*args):
+ templates_path = ['_templates']
+ 
+ with open('../pyproject.toml', 'rb') as f:
+-    pyproject_toml = toml.load(f)
++    pyproject_toml = tomli.load(f)
+ toml_env = pyproject_toml['tool']['cibuildwheel']['environment']
+ 
+ rst_prolog = f"""
