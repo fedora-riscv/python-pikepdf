@@ -1,18 +1,16 @@
 %global srcname pikepdf
 
 Name:           python-%{srcname}
-Version:        4.5.0
+Version:        5.1.0
 Release:        %autorelease
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
-# docs: Fix typo in TOML loading
-Patch0001:      https://github.com/pikepdf/pikepdf/pull/308.patch
 
 BuildRequires:  gcc-c++
-BuildRequires:  qpdf-devel >= 10.3.2
+BuildRequires:  qpdf-devel >= 10.6.2
 BuildRequires:  python3-devel
 # Tests:
 BuildRequires:  poppler-utils
@@ -42,9 +40,6 @@ Documentation for pikepdf
 
 %prep
 %autosetup -n %{srcname}-%{version} -p1
-
-# Allow new pybind11
-sed -i -e '/pybind11/s/, <= 2.8.0//' pyproject.toml
 
 # Drop coverage requirements
 sed -i -e '/coverage/d' -e '/pytest-cov/d' setup.cfg
