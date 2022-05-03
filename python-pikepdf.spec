@@ -9,6 +9,9 @@ License:        MPLv2.0
 URL:            https://github.com/pikepdf/pikepdf
 Source0:        %pypi_source
 
+# Fixes one test's compatibility with Python 3.11
+Patch0:         https://github.com/pikepdf/pikepdf/pull/338.patch
+
 BuildRequires:  gcc-c++
 BuildRequires:  qpdf-devel >= 10.6.2
 BuildRequires:  python3-devel
