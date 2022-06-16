@@ -24,6 +24,7 @@ based on QPDF, a powerful PDF manipulation and repair library.
 
 %package -n     python3-%{srcname}
 Summary:        %{summary}
+Requires:       python%{python3_version}dist(setuptools)
 
 %description -n python3-%{srcname}
 pikepdf is a Python library for reading and writing PDF files. pikepdf is
