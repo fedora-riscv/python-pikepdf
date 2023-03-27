@@ -57,7 +57,7 @@ sed -i -e "s/release = .\+/release = '%{version}'/g" docs/conf.py
 
 
 %generate_buildrequires
-%pyproject_buildrequires -r %{?with_docs: -x docs} %{?with_tests: -x test}
+%pyproject_buildrequires %{?with_docs: -x docs} %{?with_tests: -x test}
 
 
 %build
