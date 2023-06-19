@@ -1,3 +1,5 @@
+%global _with_docs 1
+%global _with_tests 1
 %global srcname pikepdf
 
 # Bconds are needed for Python bootstrap
