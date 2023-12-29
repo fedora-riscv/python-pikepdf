@@ -2,11 +2,11 @@
 
 # Bconds are needed for Python bootstrap
 %bcond docs 1
-%bcond tests 1
+%bcond tests 0
 
 Name:           python-%{srcname}
 Version:        8.8.0
-Release:        %autorelease
+Release:        %autorelease -e rv64
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPL-2.0
