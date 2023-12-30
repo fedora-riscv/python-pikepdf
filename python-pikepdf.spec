@@ -6,7 +6,7 @@
 
 Name:           python-%{srcname}
 Version:        8.8.0
-Release:        %autorelease -e rv64
+Release:        %autorelease -e rv64_nc
 Summary:        Read and write PDFs with Python, powered by qpdf
 
 License:        MPL-2.0
